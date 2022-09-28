@@ -1,16 +1,13 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import html2canvas from "html2canvas";
-import { ImagePixelated, ElementPixelated } from "react-pixelate"
+import { ImagePixelated } from "react-pixelate"
 
 export default function Home() {
   const inputRef = useRef(undefined);
-  const canvasRef = useRef(undefined);
   const imageRef = useRef(undefined);
 
   const [picture, setPicture] = useState(undefined);
   const [link, setLink] = useState('');
-
-  let canvas, image, context, pixelArr, sample_size;
 
   const changeHandler = (e) => {
     const file = e.target.files?.item(0);
