@@ -36,6 +36,10 @@ export default function Home() {
   };
   return (
     <div className='container'>
+      <nav>
+        <h2>Image pixelation</h2>
+        #Nextjs #Cloudinary
+      </nav>
       <div className='row'>
         <div className='column'>
           {picture ?
@@ -52,10 +56,11 @@ export default function Home() {
         {picture &&
           <div className='column'>
             <h2>Pixelated image</h2>
+            {link && <a href={link}><p>Get link</p></a>}
+
             <div ref={imageRef} >
               <ImagePixelated src={picture} width={500} height={300} fillTransparencyColor={"grey"} />
             </div>
-            {link && <a href={link}><p>Get link</p></a>}
             <button onClick={uploadHandler}>Upload Image</button>
           </div>
         }
